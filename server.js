@@ -35,10 +35,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api/:name', (req, res) => {
-  const suitName = req.params.name.toLowerCase();
-  if ( suits[suitName] ) {
-    res.json(suits[suitName])
+app.get('/api/:suitName', (req, res) => {
+  const suitsName = req.params.suitName.toLowerCase();
+  if (suits[suitsName] ) {
+    res.json(suits[suitsName])
   } else {
     res.json(suits['unknown'])
   }
